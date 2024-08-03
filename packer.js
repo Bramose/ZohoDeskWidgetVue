@@ -10,6 +10,8 @@ async function createZipArchive() {
 
   const outputFile = './dist/app.zip'
   zip.addLocalFolder('./build')
+  zip.addLocalFile('./plugin-manifest.json')
+  zip.addLocalFile('././resources.json')
   zip.writeZip(outputFile)
   console.log(`Created ${outputFile} successfully`)
 }
